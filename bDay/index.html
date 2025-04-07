@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi ki Doğdun Annem❤️!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Arka planda müzik -->
+    <audio autoplay loop>
+        <source src="bday.mp3" type="audio/mpeg">
+    </audio>
+</head>
+
+<body>
+    <h1>🎉 İyi ki Doğdun Annem❤️! 🎉</h1>
+
+    <div class="flowers">
+        <p>Seninle geçen her an, hayatımın en değerli anı. İyi ki doğdun, iyi ki benim annemsin🌹🌸</p>
+        <p>Her zaman yanımda oldun iyi ki varsın annem🌹🌸 Senin varlığın, her günüme anlam katıyor.</p>
+    </div>
+
+    <div class="cake" onclick="revealMessage()">
+        <!-- Kendi pasta görselini 'cake.png' olarak klasöre koymalısın -->
+        <img src="cake.png" alt="Doğum günü pastası" id="cake">
+    </div>
+
+    <div class="message" id="birthdayMessage">
+        <p>İyi ki doğdun, dünyanın en güzel annesi! ❤️ Seni çok seviyorum…</p>
+    </div>
+
+    <script>
+        // Balonlar oluştur
+        for (let i = 0; i < 20; i++) {
+            let balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDelay = Math.random() * 10 + 's';
+            balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 80%)`;
+            document.body.appendChild(balloon);
+        }
+
+        // Pasta tıklanınca mesaj göster
+        function revealMessage() {
+            const cake = document.getElementById('cake');
+            cake.style.opacity = 0.5;
+            document.getElementById('birthdayMessage').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
